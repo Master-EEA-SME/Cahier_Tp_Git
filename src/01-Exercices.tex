@@ -1,0 +1,182 @@
+\setcounter{page}{1}
+\chapter*{Initialisation à GIT}
+\section{Prise en main Git}
+\subsection{Configuration de votre git}
+
+Une des premières étapes à effectuer lors de l'utilisation de git sur une nouvelle machine est sa configuration. Cette étape va permettre de vous identifier durant les avancées de vos projet (savoir qui a commit, qui a push, etc ...). 
+
+\medskip
+
+À l'aide de votre terminal créez un dossier qui fera office de dépôt de travail. Placez vous dans ce dossier et initialisez ce dossier comme un dépôt Git.
+
+\medskip
+
+Veuillez configurer votre git avant de commencer le cahier de TP sur votre terminal.
+
+
+\subsection{Premier commit}
+
+Dans ce dépôt, créez un fichier \textit{main.cpp} et écrivez un simple programme en C++ qui permet d'afficher sur le terminal le message "Hello, World!". Compilez le et exécutez-le. 
+
+\medskip
+
+Avec la commande git appropriée ajoutez uniquement le fichier que vous venez de créer pour qu'il soit prêt à être soumis à la modification, commit. Vérifiez que vous l'avez ajouté avec la commande : \textbf{git status}.
+
+~
+
+Finissez par un commit de votre travail en mettant comme description du commit "Mon premier commit". Vérifiez que vous avez bien commité grâce à la commande : \textbf{git log}. 
+
+\medskip
+
+Les commits sont des étapes importantes que ça soit pour du travail individuel ou collaboratif, ne négligez pas le nom que vous donnerez à vos commits car ils permettront de localiser l'avancement de vos projets pour vous et vos collègues.
+
+\subsection{Gérer son dépôt}
+Si vous vérifiez l'état de votre dépôt, vous remarquerez qu'il y a des fichiers binaires suivis (untracked) ou modifiés. L'outil Git permet d'indiquer quels sont les fichiers qu'on veut suivre et ceux qu'on ne veut pas. Cela permet d'avoir une meilleure traçabilité des fichiers modifiés.
+\medskip
+
+Pour cela configurez votre dépôt en ajoutant votre ".gitignore" pour qu'il ignore tous les fichiers à part ceux importants au projet. Dans ce cas la indiquez à git d'ignorer les fichiers binaires produits par le compilateur \textit{gcc}.éré doit être ignoré.
+
+\medskip
+
+\noindent Ajoutez votre configuration et commitez.
+
+\newpage 
+
+\section{Démineur !} 
+
+Durant cette seconde partie du TP vous allez devoir mettre en pratique les différentes commandes principales vu durant le cours sur Git. Vous allez devoir récupérer un dépôt distant sur Github pour venir travailler sur le projet en binôme ou groupe avant de le remettre sur un autre dépôt distant de compte rendu de votre travail.
+
+~
+
+\noindent L'objectif sera la réalisation d'un jeu sur votre shell, le démineur en C++, en manipulant simultanément l'outil Git.
+
+\subsection{Créez votre compte Github}
+
+\noindent Veuillez créer votre compte de travail sur le site Github !
+
+\medskip
+
+\noindent Inscrivez-vous grâce au lien suivant : \textbf{\href{https://github.com/join?source=login/}{https://github.com/join?source=login}}
+
+\subsection{Clonez le dépôt distant du projet}
+
+\noindent Grâce à votre terminal placez vous sur le bureau de votre session. Ensuite effectuez un : \textbf{git clone} du projet situé à cette url : \textbf{\href{https://github.com/Cours-Master-SME/Minesweeper\_template.git}{https://github.com/Cours-Master-SME/Minesweeper\_template.git}}.
+
+\subsection{Un dépôt pour deux}
+
+\noindent Pour réaliser la suite du TP veuillez créer un seul dépôt distant sur votre compte Github parmi votre binôme en le nomant : \textbf{Repo\_Nom1\_Nom2}. 
+
+\subsection{Ajoutez votre binôme à votre dépôt}
+
+\noindent Maintenant que votre dépôt distant est crée sur Github veuillez inviter votre binôme de travail à se joindre à votre projet de TP. Pour cela dirigez vous dans l'onglet "Settings", ensuite allez dans "Manage access" et ajoutez votre binôme avec le bouton "Invite teams or people".
+
+\subsection{Ajouter l'URL de votre dépôt distant}
+
+\noindent Dans cette partie on vous demandera de changer l'URL du dépôt du TP que vous avez clonnez pour lui attribuer votre nouveau dépôt crée sur votre compte Github. Pour cela utilisez les commandes : \textbf{git remote}.
+
+\medskip
+
+\noindent git remote add origin https://github.com/YOUR\_ACCOUNT/YOUR\_REPO.git 
+
+\noindent git branch -M master
+
+\noindent git push -u origin master
+
+\subsection{Choisissez votre branche}
+
+\noindent Il est temps de commencer à travailler sur le projet et de faire votre développement ! Répartissez vous maintenant le travail grâce à la création de deux branches. 
+
+\medskip
+
+\noindent Le binôme numéro 1 devra créer, sur son dépôt local, la branche \textbf{"Dev\_Cells"} et le binôme numéro 2 devra créer à son tour la branche \textbf{"Dev\_Game"}. Tapez dans votre terminal la commande git appropriée pour voir si votre branche de développement a été bien créée à côté de votre branche master.
+
+\subsection{Fonctionnalité du jeu}
+\subsubsection{Fonctionnalité de la cellule}
+\noindent L'objet \textit{\textbf{cellule}} correspondra à une case du démineur. La cellule a plusieurs états. Elle peut être découverte, contenir une mine ou contenir un chiffre. Le chiffre indique le nombre de mines qui se trouve aux alentours de la cellule. Se placer sur la branche \textbf{Dev\_Cells} pour ajouter la fonctionnalité des cellules. À vous de décider quand faire des commits et quels noms auront ces commits.
+
+\medskip
+
+\begin{itemize}
+    \item Completez la méthode \textit{\textbf{addMine}} qui permet d'affecter une mine à la cellule. Cette méthode permet d'affecter une mine à la cellule lors de l'initialisation du jeu.
+    \medskip
+    \item Modifier la méthode \textit{\textbf{getNeighbours}} qui permet d'indiquer le nombre de mines aux alentours de la cellule. Cette méthode permet de récuperer le nombre de mines aux alentours de la cellule pour l'afficher.
+    \medskip
+    \item Modifier la méthode \textit{\textbf{isDiscovered}} qui permet de savoir si la cellule a été découverte. Cette méthode est utilisée lors de l'affichage mais aussi lorsque l'on choisit de révéler une case.
+    \medskip
+    \item Modifier la méthode \textit{\textbf{isAMine}} qui permet d'indiquer si la cellule contient une mine. Cette méthode sera utilisée comme condition d'arrêt lorsqu'on découvre les cases par récursivité mais aussi pour afficher les mines lorsque l'on a perdu.
+    \medskip
+    \item Modifier la méthode \textit{\textbf{hasNeighbours}} qui permet de savoir si la cellule possède des voisins mines. Cette méthode est utilisée aussi comme condition d'arrêt lorsqu'on découvre les cases par récursivité.
+\end{itemize}
+
+\subsubsection{Fonctionnalité de la grille}
+\noindent L'objet \textit{\textbf{Game}} correspond à la plateforme du jeu qui va contenir un tableau à 2 dimensions des cellules du jeu, qui va être la grille du jeu. Cet objet devra gérer l'affichage de la grille et la découverte des cellules dans un premier temps. Se placer sur la branche \textbf{Dev\_Game} pour ajouter la fonctionnalité du jeu. À vous de décider quand faire des commits et quels noms auront ces commits.
+
+\medskip
+
+\begin{itemize}
+    \item Modifier la méthode \textit{\textbf{getX}} qui permet de retourner le nombre de lignes de la grille. Cette méthode est utilisée pour borner le déplacement dans la grille au niveau des lignes.
+    \medskip
+    \item Modifier la méthode \textit{\textbf{getY}} qui permet de retourner le nombre de colonnes de la grille. Cette méthode est utilisée pour borner le deplacement dans la grille au niveau des colonnes.
+\end{itemize}
+\noindent 
+
+\medskip
+
+\subsection{Intégration des deux fonctionnalités}
+\noindent Apres avoir completé les deux fonctionnalités précédentes, intégrer ces fonctionnalités dans la branche \textbf{master} et tester le fonctionnement.
+
+\subsection{Fonctionnalité drapeau}
+Dans le jeu démineur, on a la possibilité d'ajouter des drapeaux sur des cases si on pense qu'une mine s'y trouve. Créer une nouvelle branche \textbf{Dev\_Flags} et se deplacer dessus.
+
+\begin{itemize}
+    \item Modifiez la méthode \textit{\textbf{isFlagged}} pour indiquer si la cellule contient un drapeau. On utilise cette méthode, lors de l'affichage, pour marquer les cases qui ont un drapeau par un F.
+    \item Modifier la méthode \textit{\textbf{flag}} qui permet de mettre ou d'enlever un drapeau sur la cellule. Cette méthode est utilisée lorsqu'on veut placer ou enlever le drapeau sur la case.
+\end{itemize}
+
+\medskip
+
+Intégrez cette fonctionnalité à votre branche \textbf{master} en utilisant le rebase et vérifiez le fonctionnement du jeu.
+
+\subsection{Fonctionnalité de fin de jeu}
+\noindent Si le joueur tombe sur une mine, le jeu doit savoir que le joueur a perdu et afficher un message en indiquant qu'il a perdu. Si le joueur découvre toutes les cases sans tomber sur une mine, le jeu doit indiquer si le joueur a gagné et afficher un message indiquant qu'il a gagné.
+
+\medskip
+
+\noindent En parallèle et sur la même branche intégrer : 
+\begin{itemize}
+    \item L'événenement qui permet de savoir si le joueur a découvert toutes les cases sans tomber sur une mine.
+    \item L'événemement qui permet de savoir si le joueur est tombé sur une mine.
+\end{itemize}
+
+\medskip
+
+Indice : La seule méthode à completer/modifier est \textit{\textbf{Game::discover}}.
+
+\medskip
+
+Fusionner vos fonctionnalités en les récuperants du dépot distant. On doit ici retrouver deux commits.
+
+\subsection{Ajouter en dernier les enseignants à votre dépôt}
+
+\noindent Pour cette dernière étape il vous ai demandé d'ajouter les deux enseignants à vos dépôts distants pour venir récupérer votre travail. Vous trouverez les enseignants sous les pseudonymes suivants :
+
+\begin{itemize}
+    \item Pedro Carvalho Mendes : PedroCarvalho64  
+    \item Nicolas Otal : NicolasO-git
+\end{itemize}
+% 9. Dans le fichier gacome.cpp suivez les consignes suivantes :
+%     9.1 Modifier la méthode getX qui permet de retourner le nombre de Lignes. (Commit)
+%     9.2 Modifier la méthode getY qui permet de retourner le nombre de Colones (Commit)
+%     9.3 Modifier la méthode hasLost qui permet de retourner si la partie est gagnée.
+%     9.4 Modifier la méthode haswon qui permet de retourner si la partie est perdue. 
+% 
+% 10. Mergez votre développement pour intégration à la branche principale
+%     10.1 Mergez Dev_cells et Dev_Games dans la branche principale ou bien dans la branche Dev_cells 
+%     dans la branche Dev_Games puis dans la principale.
+% 
+% 11. Ajouts de la fonctionnalité Drapeau
+%     11.1 Modifier la méthode isFlagged qui permet d'indiquer si la cellule est un drapeau. (No commit)
+%     11.2 Compléter la méthode flag qui permet de d'enlever ou d'ajouter un drapeau. (No commit)
+%     11.3 Une erreur ? Un problème ? Stash ?
+% 
+% 12. Ajoutez les enseignants a vos projets pour qu'ils puissent les récupérer en fin de séance
