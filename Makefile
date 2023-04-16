@@ -9,7 +9,7 @@ all: main.pdf
 	$(LTX_COMPILER) $< && $(LTX_COMPILER) -shell-escape $< && mv $@ $(RELEASE).pdf
 
 clean:
-	rm -f *.aux *.log *.out *.pdf \
+	rm -f *.aux *.log *.out *.pdf *.fdb_latexmk *.fls *.gz \
 		src/*.aux
 
 publish:

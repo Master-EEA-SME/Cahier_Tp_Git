@@ -60,7 +60,13 @@ L'objectif sera la réalisation d'un jeu sur votre shell, le démineur en C++, e
 %
 \section{Cloner le dépôt distant du projet}
 
-Grâce à votre terminal placez vous sur le bureau de votre session. Ensuite effectuer un : \textbf{git clone} du projet situé à cette url : \textbf{\href{https://github.com/Cours-Master-SME/Minesweeper\_template.git}{https://github.com/Cours-Master-SME/Minesweeper\_template.git}}.
+Grâce à votre terminal placez vous sur le bureau de votre session. Ensuite effectuer un : \textbf{git clone} du projet situé à cette url : 
+
+\begin{center}
+    \textbf{\href{https://github.com/Cours-Master-SME/Minesweeper\_template.git}{https://github.com/Cours-Master-SME/minesweeper\_template.git}}.
+\end{center}
+
+
 
 \section{Un dépôt pour deux}
 
@@ -90,10 +96,10 @@ Il est temps de commencer à travailler sur le projet et de faire votre dévelop
 
 L'un d'entre vous travaillera sur la branche \textbf{dev\_game} et l'autre sur la branche \textbf{dev\_cell}. Celui qui sera sur l'autre poste devra refaire la configuration de git voir \ref{label:prise_en_main_git}. \nameref{label:prise_en_main_git}.
 
-Le binôme numéro 1 devra créer, sur son dépôt local, la branche \textbf{"Dev\_Cells"} et le binôme numéro 2 devra créer à son tour la branche \textbf{"Dev\_Game"}. Tapez dans votre terminal la commande git appropriée pour voir si votre branche de développement a été bien créée à côté de votre branche master.
+Le binôme numéro 1 devra créer, sur son dépôt local, la branche \textbf{dev\_cell} et le binôme numéro 2 devra créer à son tour la branche \textbf{dev\_game}. Tapez dans votre terminal la commande git appropriée pour voir si votre branche de développement a été bien créée à côté de votre branche master.
 
 \section{Fonctionnalité du jeu}
-Le jeu démineur est un jeu à un joueur dont le but est de decouvrir la \textit{grille} entiere sans tomber sur une \textit{mine}. Si le joeur tombe sur une mine il a \textit{perdu}. Si le joueur decouvre toute la grille sans \textit{tomber} sur une mine alors il a \textit{gagné}. Le jeu se déroule sur une grille de deux dimensions. Une case de la grille peut avoir une mine, vide, un chiffre qui indique le nombre de mines dans les cases voisines ou non découverte. Une case a huit voisins qui sont les cases adjacentes à elle même. Le joueur peut placer des drapeaux sur les cases s'il pense qu'une mine est presente.
+Le jeu démineur est un jeu à un joueur dont le but est de découvrir la \textit{grille} entière sans tomber sur une \textit{mine}. Si le joueur tombe sur une mine il a \textit{perdu}. Si le joueur découvre toute la grille sans \textit{tomber} sur une mine alors il a \textit{gagné}. Le jeu se déroule sur une grille de deux dimensions. Une case de la grille peut avoir une mine, vide, un chiffre qui indique le nombre de mines dans les cases voisines ou non découverte. Une case a huit voisins qui sont les cases adjacentes à elle même. Le joueur peut placer des drapeaux sur les cases s'il pense qu'une mine est presente.
 
 \subsection{Fonctionnalité de la case}
 L'objet \textit{\textbf{Cell}} correspondra à la case de la grille du démineur. Se placer sur la branche \textbf{dev\_cell} pour ajouter la fonctionnalité de la case. À vous de décider quand faire des commits et quels noms auront ces commits.
